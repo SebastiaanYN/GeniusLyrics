@@ -3,9 +3,9 @@ package com.sebastiaanyn.genius;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sebastiaanyn.genius.Request.Data.Search;
-import com.sebastiaanyn.genius.Request.Route;
-import com.sebastiaanyn.genius.Request.Routes;
+import com.sebastiaanyn.genius.request.Route;
+import com.sebastiaanyn.genius.request.Routes;
+import com.sebastiaanyn.genius.request.data.Search;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.safety.Whitelist;
@@ -93,7 +93,7 @@ public class Genius {
         document.outputSettings(new Document.OutputSettings().prettyPrint(false));
         document.select("br").append("\\n");
         document.select("p").prepend("\\n\\n");
-        String s = document.html().replaceAll("\\\\n", "\n");
+        String s = document.html().replace("\\n", "\n");
         return Jsoup.clean(s, "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
     }
 

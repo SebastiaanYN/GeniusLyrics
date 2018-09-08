@@ -1,4 +1,4 @@
-package com.sebastiaanyn.genius.Request;
+package com.sebastiaanyn.genius.request;
 
 public enum Method {
     GET,

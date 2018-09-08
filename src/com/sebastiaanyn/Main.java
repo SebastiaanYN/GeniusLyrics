@@ -1,7 +1,7 @@
 package com.sebastiaanyn;
 
 import com.sebastiaanyn.genius.Genius;
-import com.sebastiaanyn.genius.Request.Data.Search;
+import com.sebastiaanyn.genius.request.data.Search;
 
 import java.util.List;
 import java.util.Scanner;
@@ -18,9 +18,9 @@ public class Main {
             String query = in.nextLine();
             Search search = GENIUS.search(query);
 
-            List<Search.Response.Song> hits = search.response.hits;
-            System.out.println("\nGot " + 5 + " possible hits");
-            IntStream.range(0, 5)
+            List<Search.Response.Song> hits = search.response.hits.subList(0, 5);
+            System.out.println("\nGot " + hits.size() + " possible hits");
+            IntStream.range(0, hits.size())
                     .mapToObj(i -> i + 1 + ". " + hits.get(i).result.fullTitle)
                     .forEach(System.out::println);
 

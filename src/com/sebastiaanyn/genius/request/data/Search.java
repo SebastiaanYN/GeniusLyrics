@@ -1,4 +1,4 @@
-package com.sebastiaanyn.genius.Request.Data;
+package com.sebastiaanyn.genius.request.data;
 
 import java.util.List;
 

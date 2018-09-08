@@ -1,4 +1,4 @@
-package com.sebastiaanyn.genius.Request;
+package com.sebastiaanyn.genius.request;
 
 public class Route<T> {
 
